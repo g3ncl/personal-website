@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/snake4d/*"
+  to = "https://snake4d.netlify.app/:splat"
+  status = 200
+  force = true
