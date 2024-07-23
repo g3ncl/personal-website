@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-const inter = Inter({ subsets: ["latin"] });
+import localFont from "next/font/local";
+import "./globals.scss";
+
+// Font files can be colocated inside of `app`
+const font = localFont({
+  src: "./fonts/Iosevka-Regular.woff2",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "g3ncl",
+  title: "g3n.cl",
   description: "Welcome to my personal website",
 };
 
@@ -15,10 +20,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <header></header>
+      <body className={font.className}>
         <main>{children}</main>
-        <footer></footer>
       </body>
     </html>
   );

@@ -1,0 +1,34 @@
+:root {
+  /* Light theme */
+  --bg-color-light: #f0f0f0;
+  --text-color-light: #333333;
+  --link-color-light: #0066cc;
+  --link-hover-color-light: #004499;
+
+  /* Dark theme */
+  --bg-color-dark: #333333;
+  --text-color-dark: #ffffff;
+  --link-color-dark: #66b3ff;
+  --link-hover-color-dark: #99ccff;
+}
+
+/* Default to dark theme */
+:root {
+  --bg-color: var(--bg-color-dark);
+  --text-color: var(--text-color-dark);
+  --link-color: var(--link-color-dark);
+  --link-hover-color: var(--link-hover-color-dark);
+}
+
+/* Light theme class */
+.light-theme {
+  --bg-color: var(--bg-color-light);
+  --text-color: var(--text-color-light);
+  --link-color: var(--link-color-light);
+  --link-hover-color: var(--link-hover-color-light);
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+}
