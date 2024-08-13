@@ -31,13 +31,8 @@
   margin-bottom: 0.5rem;
 }
 
-.jobInfo {
-  display: flex;
-  justify-content: space-between;
-}
-
-.dateAndLocation {
-  text-align: right;
+.jobPart {
+  text-wrap: none;
 }
 
 .link {

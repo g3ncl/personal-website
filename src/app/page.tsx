@@ -35,16 +35,13 @@ const Home = () => (
 
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>{`EXPERIENCE`}</h2>
-        <div>{`I'm currently working as:`}</div>
-        <div className={styles.jobInfo}>
-          <div>
-            <p>{`Software Engineer @ NTT DATA Italia, Customer Experience`}</p>
-          </div>
-          <div className={styles.dateAndLocation}>
-            <p>{`Dec 2022 – Present`}</p>
-            <p>{`Milan, Italy`}</p>
-          </div>
-        </div>
+        <p>{`I'm currently working as:`}</p>
+
+        <p className={styles.jobPart}>
+          {`Software Engineer @ NTT DATA `}
+          {`in Milan, Italy `}
+          {`~ Dec 2022 → Present`}
+        </p>
       </section>
 
       <section className={styles.section}>
