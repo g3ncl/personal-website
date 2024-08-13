@@ -42,14 +42,24 @@ const Home = () => (
           {`in Milan, Italy `}
           {`~ Dec 2022 → Present`}
         </p>
+
+        <a
+          href="https://github.com/g3ncl/resume/releases/latest/download/resume-en.pdf"
+          className={styles.link}
+        >
+          {`Download Resume`}
+        </a>
       </section>
 
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>{`PROJECTS`}</h2>
         <p>{`Curious about what I've been up to? Check out my projects:`}</p>
-        <a href="/snake4d" className={styles.link}>
-          Snake 4D
-        </a>
+        <p>
+          {`♦`}
+          <a href="/snake4d" className={`${styles.link} ${styles.list}`}>
+            {`Snake 4D`}
+          </a>
+        </p>
       </section>
 
       <section className={styles.section}>

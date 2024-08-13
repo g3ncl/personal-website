@@ -37,12 +37,15 @@
 
 .link {
   color: var(--link-color);
-  margin-left: 0.5rem;
   text-decoration: underline;
 
   &:hover {
     color: var(--link-hover-color);
   }
+}
+
+.list {
+  margin-left: 0.5rem;
 }
 
 .contactList {
