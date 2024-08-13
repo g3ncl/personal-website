@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   description: "Welcome to my personal website",
 };
 
+// eslint-disable-next-line func-style, prefer-arrow/prefer-arrow-functions
 export default function RootLayout({
   children,
 }: Readonly<{

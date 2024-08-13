@@ -1,15 +1,15 @@
 .container {
   background-color: var(--bg-color);
   color: var(--text-color);
-  padding: 2rem;
   min-height: calc(100dvh - 4rem);
+  padding: 2rem;
 }
 
 .content {
-  max-width: 48rem;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
+  max-width: 48rem;
 }
 
 .header {
@@ -31,15 +31,19 @@
   margin-bottom: 0.5rem;
 }
 
-.list {
-  list-style-type: disc;
-  padding-left: 1.5rem;
+.jobInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dateAndLocation {
+  text-align: right;
 }
 
 .link {
   color: var(--link-color);
-  text-decoration: underline;
   margin-left: 0.5rem;
+  text-decoration: underline;
 
   &:hover {
     color: var(--link-hover-color);
@@ -52,9 +56,9 @@
 }
 
 .contactLink {
-  display: flex;
   align-items: center;
   color: var(--text-color);
+  display: flex;
   margin-bottom: 0.5rem;
 
   &:hover {

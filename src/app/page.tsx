@@ -1,6 +1,7 @@
 import React from "react";
-import { Github, Linkedin, Mail, Globe } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 import styles from "./page.module.scss";
+import { getFormattedDatetime } from "@/utils/utils";
 
 const Home = () => (
   <div className={styles.container}>
@@ -11,10 +12,7 @@ const Home = () => (
 
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>{`NAME`}</h2>
-        <p>
-          {`g3n.cl - Your friendly neighborhood Fullstack Developer & DevOps
-          Enthusiast`}
-        </p>
+        <p>{`Claudio Genovese - Software Engineer`}</p>
       </section>
 
       <section className={styles.section}>
@@ -25,12 +23,28 @@ const Home = () => (
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>{`DESCRIPTION`}</h2>
         <p>
-          {`Hey there! I'm a fullstack dev who loves creating seamless, efficient
-          web applications. My toolbox includes Next.js, React, and TypeScript.
-          I'm also a big fan of DevOps practices, implementing CI/CD pipelines,
-          and deploying applications on cloud (usually AWS). Life is too short
-          to do otherwise.`}
+          {`Hey there! I'm a fullstack develper who loves creating seamless and efficient
+          web applications.`}
+          <br></br>
+          {`My toolbox includes TypeScript, NodeJS, React, Next.js, Python, Docker and SQL.`}
+          <br></br>
+          {`I'm also experimenting with DevOps practices, implementing CI/CD pipelines,
+          and deploying applications on cloud (AWS).`}
         </p>
+      </section>
+
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>{`EXPERIENCE`}</h2>
+        <div>{`I'm currently working as:`}</div>
+        <div className={styles.jobInfo}>
+          <div>
+            <p>{`Software Engineer @ NTT DATA Italia, Customer Experience`}</p>
+          </div>
+          <div className={styles.dateAndLocation}>
+            <p>{`Dec 2022 – Present`}</p>
+            <p>{`Milan, Italy`}</p>
+          </div>
+        </div>
       </section>
 
       <section className={styles.section}>
@@ -43,7 +57,7 @@ const Home = () => (
 
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>{`CONTACT`}</h2>
-        <p className={styles.mb2}>{`Let's connect! Find me on:`}</p>
+        <p>{`Let's connect! Find me on:`}</p>
         <ul className={styles.contactList}>
           <li>
             <a
@@ -67,17 +81,11 @@ const Home = () => (
               {`linkedin.com`}
             </a>
           </li>
-          <li>
-            <a href="https://g3n.cl" className={styles.contactLink}>
-              <Globe className={styles.icon} size={16} />
-              {`g3n.cl`}
-            </a>
-          </li>
         </ul>
       </section>
 
       <footer className={styles.footer}>
-        <p>{`Last updated: ${new Date().toLocaleString()}`}</p>
+        <p>{`Last updated: ${getFormattedDatetime()}`}</p>
       </footer>
     </div>
   </div>
