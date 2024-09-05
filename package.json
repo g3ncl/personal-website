@@ -14,7 +14,8 @@
     "test:coverage": "jest --coverage",
     "lint:all": "npm run lint && npm run lint:style",
     "lint-staged": "lint-staged",
-    "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,json,css,scss,sass,md}'"
+    "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,json,css,scss,sass,md}'",
+    "generate-ascii-module": "node src/ascii/convert-ascii-text.mjs src/ascii/ascii-text.txt src/ascii/ascii-text.js "
   },
   "dependencies": {
     "lucide-react": "^0.404.0",
