@@ -2,22 +2,20 @@ import React from "react";
 import { Github, Linkedin } from "lucide-react";
 import styles from "./page.module.scss";
 import { getFormattedDatetime } from "@/utils/utils";
+import { asciiString } from "../ascii/ascii-text.js";
 
 const Home = () => (
   <div className={styles.container}>
     <div className={styles.content}>
       <header className={styles.header}>
-        <h1 className={styles.title}>{`G3N.CL`}</h1>
+        <pre className={styles.asciiArt} role="img" aria-label="g3ncl">
+          {asciiString}
+        </pre>
       </header>
 
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>{`NAME`}</h2>
         <p>{`Claudio Genovese - Software Engineer`}</p>
-      </section>
-
-      <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>{`SYNOPSIS`}</h2>
-        <p>{`g3n.cl [--code] [--deploy] [--enjoy]`}</p>
       </section>
 
       <section className={styles.section}>
@@ -29,7 +27,7 @@ const Home = () => (
           {`My toolbox includes TypeScript, NodeJS, React, Next.js, Python, Docker and SQL.`}
           <br></br>
           {`I'm also experimenting with DevOps practices, implementing CI/CD pipelines,
-          and deploying applications on cloud (AWS).`}
+          and deploying applications on cloud (mostly AWS).`}
         </p>
       </section>
 
