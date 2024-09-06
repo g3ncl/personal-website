@@ -26,8 +26,8 @@ const Home = () => (
           <br></br>
           {`My toolbox includes TypeScript, NodeJS, React, Next.js, Python, Docker and SQL.`}
           <br></br>
-          {`I'm also experimenting with DevOps practices, implementing CI/CD pipelines,
-          and deploying applications on cloud (mostly AWS).`}
+          {`I'm also experimenting with DevOps practices, implementing CI/CD pipelines
+           and deploying applications on cloud (mostly AWS).`}
         </p>
       </section>
 
