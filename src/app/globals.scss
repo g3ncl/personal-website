@@ -10,8 +10,8 @@
   --bg-color-dark: rgb(51 51 51);
   --text-color-dark: rgb(255 255 255);
   --text-selection-color-dark: rgb(0 209 184);
-  --link-color-dark: rgb(102 179 255);
-  --link-hover-color-dark: rgb(153 204 255);
+  --link-color-dark: rgb(0 209 184);
+  --link-hover-color-dark: rgb(11 156 139);
 
   /* Default to dark theme */
   --bg-color: var(--bg-color-dark);
@@ -34,12 +34,32 @@ body {
   line-height: 1.5rem;
   margin: 0;
   min-height: 100dvh;
+  position: relative;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: underline;
+
+  &:hover {
+    color: var(--link-hover-color);
+  }
+}
+
+a::selection {
+  color: var(--text-color);
 }
 
 ::selection {
   background: var(--text-selection-color);
 }
 
-::selection {
-  background: var(--text-selection-color);
+.noSelect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  user-select: none; /* Safari */
+  user-select: none; /* Konqueror HTML */
+  user-select: none; /* Old versions of Firefox */
+  user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }

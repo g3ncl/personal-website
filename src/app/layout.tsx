@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.scss";
+import ParticleBackground from "@/components/ParticleBackground/ParticleBackground";
 
 // Font files can be colocated inside of `app`
 const font = localFont({
@@ -21,7 +22,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={font.className}>
+      <body className={`${font.className}`}>
+        <ParticleBackground speed={0.25} />
         <main>{children}</main>
       </body>
     </html>

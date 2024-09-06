@@ -1,0 +1,25 @@
+.particles {
+  animation: fadeIn 10s forwards;
+  height: 100%;
+  width: 100%;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.solidBackground {
+  background-color: var(--bg-color);
+  inset: 0;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}

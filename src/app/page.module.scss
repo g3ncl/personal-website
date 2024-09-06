@@ -1,5 +1,4 @@
 .container {
-  background-color: var(--bg-color);
   color: var(--text-color);
   min-height: calc(100dvh - 4rem);
   padding: 2rem;
@@ -39,15 +38,6 @@
 
 .jobPart {
   text-wrap: none;
-}
-
-.link {
-  color: var(--link-color);
-  text-decoration: underline;
-
-  &:hover {
-    color: var(--link-hover-color);
-  }
 }
 
 .list {

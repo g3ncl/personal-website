@@ -41,10 +41,7 @@ const Home = () => (
           {`~ Dec 2022 → Present`}
         </p>
 
-        <a
-          href="https://github.com/g3ncl/resume/releases/latest/download/resume-en.pdf"
-          className={styles.link}
-        >
+        <a href="https://github.com/g3ncl/resume/releases/latest/download/resume-en.pdf">
           {`Download Resume`}
         </a>
       </section>
@@ -54,7 +51,7 @@ const Home = () => (
         <p>{`Curious about what I've been up to? Check out my projects:`}</p>
         <p>
           {`♦`}
-          <a href="/snake4d" className={`${styles.link} ${styles.list}`}>
+          <a href="/snake4d" className={`${styles.list}`}>
             {`Snake 4D`}
           </a>
         </p>
@@ -90,7 +87,7 @@ const Home = () => (
       </section>
 
       <footer className={styles.footer}>
-        <p>{`Last updated: ${getFormattedDatetime()}`}</p>
+        <p className="noSelect">{`Last updated: ${getFormattedDatetime()}`}</p>
       </footer>
     </div>
   </div>
