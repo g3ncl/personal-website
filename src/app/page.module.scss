@@ -12,6 +12,7 @@
 }
 
 .asciiArt {
+  color: var(--accent-color);
   font-family: monospace;
   font-size: min(1.25vw, 0.5rem);
   font-weight: 900;

@@ -85,7 +85,7 @@ const ParticleBackground: React.FC<{ speed: number }> = ({ speed }) => {
       if (!ctx) return;
       ctx.beginPath();
       ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-      ctx.fillStyle = "rgba(255, 255, 255,0.25)";
+      ctx.fillStyle = "rgba(255, 255, 255,0.35)";
       ctx.fill();
     };
 
@@ -99,7 +99,7 @@ const ParticleBackground: React.FC<{ speed: number }> = ({ speed }) => {
       });
 
       // Draw connections
-      ctx.strokeStyle = "rgba(255, 255, 255, 0.05)";
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.1)";
       ctx.lineWidth = 1;
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
