@@ -4,7 +4,7 @@ import styles from "./page.module.scss";
 import { getFormattedDatetime } from "@/utils/utils";
 import { asciiString } from "../ascii/ascii-text.js";
 
-const Home = () => (
+const Home = (): JSX.Element => (
   <div className={styles.container}>
     <div className={styles.content}>
       <header className={styles.header}>
