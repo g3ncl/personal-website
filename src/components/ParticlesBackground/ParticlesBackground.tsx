@@ -46,7 +46,7 @@ const ParticlesBackground = () => {
               },
             },
             opacity: {
-              value: 0.1,
+              value: 0.3,
               random: false,
               anim: {
                 enable: true,
@@ -69,7 +69,7 @@ const ParticlesBackground = () => {
               enable: true,
               distance: 150,
               color: "#ffffff",
-              opacity: 0.1,
+              opacity: 0.3,
               width: 1,
             },
             move: {
