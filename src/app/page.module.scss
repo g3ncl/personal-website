@@ -55,6 +55,7 @@
   color: var(--text-color);
   display: flex;
   margin-bottom: 0.5rem;
+  width: fit-content;
 
   &:hover {
     color: var(--link-hover-color);

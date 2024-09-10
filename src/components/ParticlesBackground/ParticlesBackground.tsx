@@ -23,7 +23,8 @@ const ParticlesBackground = () => {
             },
             opacity: 0,
           },
-          fpsLimit: 120,
+          fpsLimit: 60,
+          fullScreen: true,
           particles: {
             number: {
               value: 60,
@@ -85,10 +86,6 @@ const ParticlesBackground = () => {
             detect_on: "window",
             events: {
               onclick: {
-                enable: true,
-                mode: "repulse",
-              },
-              onDiv: {
                 enable: true,
                 mode: "repulse",
               },
