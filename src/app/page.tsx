@@ -49,12 +49,33 @@ const Home = (): JSX.Element => (
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>{`PROJECTS`}</h2>
         <p>{`Curious about what I've been up to? Check out my projects:`}</p>
-        <p>
-          {`♦`}
-          <a href="/snake4d" className={`${styles.list}`}>
-            {`Snake 4D`}
-          </a>
-        </p>
+
+        <div className={styles.project}>
+          <p>
+            {`♦ `}
+            <a href="/snake4d" className={styles.list}>{`Snake 4D`}</a>
+          </p>
+          <span className={styles.description}>
+            A mind-bending twist on the classic Snake game, adding an extra
+            dimension for even more challenge.
+          </span>
+        </div>
+
+        <div className={styles.project}>
+          <p>
+            {`♦ `}
+            <a
+              href="https://github.com/g3ncl/acc-server-web"
+              className={styles.list}
+            >
+              {`ACC Server Web`}
+            </a>
+          </p>
+          <span className={styles.description}>
+            A web UI for managing Assetto Corsa Competizione server, built with
+            Next.js, TypeScript and packaged as a Docker container.
+          </span>
+        </div>
       </section>
 
       <section className={styles.section}>
