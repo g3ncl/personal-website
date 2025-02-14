@@ -52,7 +52,6 @@
 
 .contactLink {
   align-items: center;
-  color: var(--text-color);
   display: flex;
   margin-bottom: 0.5rem;
   width: fit-content;
@@ -77,4 +76,18 @@
 .project {
   display: flex;
   flex-direction: column;
+}
+
+.resumeLink {
+  margin-right: 1rem;
+}
+
+.resumeLinkIcon {
+  font-family: system-ui;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.resumeLinkText {
+  font-weight: 500;
 }

@@ -34,15 +34,25 @@ const Home = (): JSX.Element => (
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>{`EXPERIENCE`}</h2>
         <p>{`I'm currently working as:`}</p>
-
         <p className={styles.jobPart}>
           {`Software Engineer @ NTT DATA `}
           {`in Milan, Italy `}
           {`~ Dec 2022 → Present`}
         </p>
-
-        <a href="https://github.com/g3ncl/resume/releases/latest/download/resume-en.pdf">
-          {`Download Resume`}
+        <span>Download Resume: </span>
+        <a
+          className={styles.resumeLink}
+          href="https://github.com/g3ncl/resume/releases/latest/download/resume-en.pdf"
+        >
+          <span className={styles.resumeLinkIcon}>🇬🇧</span>
+          <span className={styles.resumeLinkText}> EN</span>
+        </a>
+        <a
+          className={styles.resumeLink}
+          href="https://github.com/g3ncl/resume/releases/latest/download/resume-it.pdf"
+        >
+          <span className={styles.resumeLinkIcon}>🇮🇹</span>
+          <span className={styles.resumeLinkText}> IT</span>
         </a>
       </section>
 
