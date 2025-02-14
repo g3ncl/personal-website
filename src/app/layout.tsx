@@ -5,7 +5,7 @@ import ParticlesBackground from "@/components/ParticlesBackground/ParticlesBackg
 
 // Font files can be colocated inside of `app`
 const font = localFont({
-  src: "./fonts/Iosevka-Regular.woff2",
+  src: "./fonts/IosevkaCustom-Regular.woff2",
   display: "swap",
 });
 
