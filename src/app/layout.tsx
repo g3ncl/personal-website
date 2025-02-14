@@ -1,13 +1,6 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.scss";
 import ParticlesBackground from "@/components/ParticlesBackground/ParticlesBackground";
-
-// Font files can be colocated inside of `app`
-const font = localFont({
-  src: "./fonts/IosevkaCustom-Regular.woff2",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "g3n.cl",
@@ -22,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${font.className}`}>
+      <body>
         <ParticlesBackground />
         <main>{children}</main>
       </body>
