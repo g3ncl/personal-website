@@ -118,7 +118,7 @@ const Home = (): JSX.Element => (
       </section>
 
       <footer className={styles.footer}>
-        <p className="noSelect">{`Last updated: ${getFormattedDatetime()}`}</p>
+        <p className="noSelect">{`Last update: ${getFormattedDatetime()}`}</p>
       </footer>
     </div>
   </div>
