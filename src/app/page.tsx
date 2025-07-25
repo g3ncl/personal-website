@@ -24,7 +24,7 @@ const Home = (): JSX.Element => (
           {`Hey there! I'm a fullstack develper who loves creating seamless and efficient
           web applications.`}
           <br></br>
-          {`My toolbox includes TypeScript, NodeJS, React, Next.js, Python, Docker and SQL.`}
+          {`My toolbox includes TypeScript, NodeJS, React, Next.js, Python, Java, Docker and SQL.`}
           <br></br>
           {`I'm also experimenting with DevOps practices, implementing CI/CD pipelines
            and deploying applications on cloud (mostly AWS).`}
@@ -35,10 +35,18 @@ const Home = (): JSX.Element => (
         <h2 className={styles.sectionTitle}>{`EXPERIENCE`}</h2>
         <p>{`I'm currently working as:`}</p>
         <p className={styles.jobPart}>
+          {`Software Engineer @ Laura `}
+          {`in Milan, Italy `}
+          {`~ Jul 2025 → Present`}
+        </p>
+        <br></br>
+        <p>{`Before that, I worked as:`}</p>
+        <p className={styles.jobPart}>
           {`Software Engineer @ NTT DATA `}
           {`in Milan, Italy `}
-          {`~ Dec 2022 → Present`}
+          {`~ Dec 2022 → Jul 2025`}
         </p>
+        <br></br>
         <span>Download Resume: </span>
         <a
           className={styles.resumeLink}
