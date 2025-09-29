@@ -1,13 +1,18 @@
 import type { Metadata } from "next";
-import "./globals.scss";
-import ParticlesBackground from "@/components/ParticlesBackground/ParticlesBackground";
+import { IBM_Plex_Mono } from "next/font/google";
+import "./globals.css";
+
+const plexMono = IBM_Plex_Mono({
+  weight: ["400", "500"],
+  variable: "--font-plex-mono",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "g3n.cl",
-  description: "Welcome to my personal website",
+  description: "Claudio's personal website",
 };
 
-// eslint-disable-next-line func-style, prefer-arrow/prefer-arrow-functions
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -15,9 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        <ParticlesBackground />
-        <main>{children}</main>
+      <body
+        className={`${plexMono.variable} antialiased transition-colors duration-200`}
+      >
+        {children}
       </body>
     </html>
   );

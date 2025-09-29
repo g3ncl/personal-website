@@ -1,135 +1,125 @@
-import React from "react";
-import { Github, Linkedin } from "lucide-react";
-import styles from "./page.module.scss";
 import { getFormattedDatetime } from "@/utils/utils";
-import { asciiString } from "../ascii/ascii-text.js";
 
-const Home = (): JSX.Element => (
-  <div className={styles.container}>
-    <div className={styles.content}>
-      <header className={styles.header}>
-        <pre className={styles.asciiArt} role="img" aria-label="g3ncl">
-          {asciiString}
-        </pre>
-      </header>
+export default function Home() {
+  return (
+    <div className="flex flex-col min-h-screen">
+      <main className="w-full max-w-3xl mx-auto px-4 top-spacing fade-in">
+        <section className="mb-8">
+          <h1 className="text-ui-1 mb-6">
+            Claudio Genovese<span className="blink">_</span>
+          </h1>
 
-      <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>{`NAME`}</h2>
-        <p>{`Claudio Genovese - Software Engineer`}</p>
-      </section>
+          <div className="text-ui-2 space-y-4 leading-relaxed">
+            <p>
+              Software engineer based in Milan, focused on clarity, reliability,
+              and craftsmanship.
+            </p>
 
-      <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>{`DESCRIPTION`}</h2>
-        <p>
-          {`Hey there! I'm a fullstack develper who loves creating seamless and efficient
-          web applications.`}
-          <br></br>
-          {`My toolbox includes TypeScript, NodeJS, React, Next.js, Python, Java, Docker and SQL.`}
-          <br></br>
-          {`I'm also experimenting with DevOps practices, implementing CI/CD pipelines
-           and deploying applications on cloud (mostly AWS).`}
-        </p>
-      </section>
+            <p>
+              Currently building at{" "}
+              <a
+                href="https://laura.it/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link"
+              >
+                Laura
+              </a>{" "}
+              as a software engineer, where I work across the entire stack —
+              from React webapps to Java microservices. Previously spent two and
+              a half years at NTT DATA, developing my foundation in enterprise
+              software development. I believe deeply in clean code principles
+              and the discipline of continuous refactoring — understanding that
+              quality software comes from ongoing refinement. I&apos;m also
+              passionate about open source philosophy and Linux systems.
+            </p>
+          </div>
+        </section>
 
-      <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>{`EXPERIENCE`}</h2>
-        <p>{`I'm currently working as:`}</p>
-        <p className={styles.jobPart}>
-          {`Software Engineer @ Laura `}
-          {`in Milan, Italy `}
-          {`~ Jul 2025 → Present`}
-        </p>
-        <br></br>
-        <p>{`Before that, I worked as:`}</p>
-        <p className={styles.jobPart}>
-          {`Software Engineer @ NTT DATA `}
-          {`in Milan, Italy `}
-          {`~ Dec 2022 → Jul 2025`}
-        </p>
-        <br></br>
-        <span>Download Resume: </span>
-        <a
-          className={styles.resumeLink}
-          href="https://github.com/g3ncl/resume/releases/latest/download/resume-en.pdf"
-        >
-          <span className={styles.resumeLinkIcon}>🇬🇧</span>
-          <span className={styles.resumeLinkText}> EN</span>
-        </a>
-        <a
-          className={styles.resumeLink}
-          href="https://github.com/g3ncl/resume/releases/latest/download/resume-it.pdf"
-        >
-          <span className={styles.resumeLinkIcon}>🇮🇹</span>
-          <span className={styles.resumeLinkText}> IT</span>
-        </a>
-      </section>
-
-      <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>{`PROJECTS`}</h2>
-        <p>{`Curious about what I've been up to? Check out my projects:`}</p>
-
-        <div className={styles.project}>
-          <p>
-            {`♦ `}
-            <a href="/snake4d" className={styles.list}>{`Snake 4D`}</a>
+        <section className="mb-8">
+          <h2 className="text-ui-2 mb-4 sub-text">Interests:</h2>
+          <p className="text-ui-2">
+            Apart from coding, I enjoy motorsport, simracing, cycling, 70s
+            progressive rock, and solving tricky problems of any kind.
           </p>
-          <span className={styles.description}>
-            A mind-bending twist on the classic Snake game, adding an extra
-            dimension for even more challenge.
-          </span>
-        </div>
+        </section>
 
-        <div className={styles.project}>
-          <p>
-            {`♦ `}
-            <a
-              href="https://github.com/g3ncl/acc-server-web"
-              className={styles.list}
-            >
-              {`ACC Server Web`}
-            </a>
-          </p>
-          <span className={styles.description}>
-            A web UI for managing Assetto Corsa Competizione server, built with
-            Next.js, TypeScript and packaged as a Docker container.
-          </span>
-        </div>
-      </section>
+        <section className="mb-8">
+          <h2 className="text-ui-2 mb-4 sub-text">Open Source Projects:</h2>
 
-      <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>{`CONTACT`}</h2>
-        <p>{`Let's connect! Find me on:`}</p>
-        <ul className={styles.contactList}>
-          <li>
-            <a
-              href="https://github.com/g3ncl"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.contactLink}
-            >
-              <Github className={styles.icon} size={16} />
-              {`github.com`}
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://linkedin.com/in/claudiogenovese"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.contactLink}
-            >
-              <Linkedin className={styles.icon} size={16} />
-              {`linkedin.com`}
-            </a>
-          </li>
-        </ul>
-      </section>
+          <div className="text-ui-2 space-y-4">
+            <article>
+              <h3 className="mb-1">
+                <a
+                  href="https://github.com/g3ncl/snake-4d"
+                  target="_blank"
+                  className="link "
+                >
+                  Snake 4D
+                </a>
+              </h3>
+              <p className="sub-text">
+                {"Classic Snake game expanded into four spatial dimensions. "}
+                <a href="/snake4d" target="_blank" className="link">
+                  try it
+                </a>
+              </p>
+            </article>
 
-      <footer className={styles.footer}>
-        <p className="noSelect">{`Last update: ${getFormattedDatetime()}`}</p>
+            <article>
+              <h3 className="mb-1">
+                <a
+                  href="https://github.com/g3ncl/acc-server-web"
+                  target="_blank"
+                  className="link "
+                >
+                  ACC Server Web
+                </a>
+              </h3>
+              <p className="sub-text">
+                A simple web interface for managing Assetto Corsa Competizione
+                servers, built with Next.js and TypeScript.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section>
+          <nav className="text-ui-2">
+            <div className="flex flex-wrap gap-4">
+              <a
+                href="https://github.com/g3ncl"
+                className="link "
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </a>
+              <a
+                href="https://linkedin.com/in/claudiogenovese/"
+                className="link "
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn
+              </a>
+              <a
+                href="https://github.com/g3ncl/resume/releases/latest/download/resume-en.pdf"
+                className="link"
+                target="_blank"
+              >
+                Resume
+              </a>
+            </div>
+          </nav>
+        </section>
+      </main>
+
+      <footer className="w-full max-w-3xl mx-auto mt-16 px-4 bottom-spacing fade-in">
+        <p className="noSelect sub-text text-ui-3">
+          Last update: {getFormattedDatetime()}
+        </p>
       </footer>
     </div>
-  </div>
-);
-
-export default Home;
+  );
+}
