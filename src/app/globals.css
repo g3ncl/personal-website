@@ -3,11 +3,11 @@
 :root {
   --color-light-bg: 249 247 244;
   --color-light-fg: 31 31 31;
-  --color-light-muted: 124 124 122;
+  --color-light-muted: 107 107 105;
 
   --color-dark-bg: 31 31 31;
   --color-dark-fg: 204 204 204;
-  --color-dark-muted: 124 124 122;
+  --color-dark-muted: 156 156 154;
 
   --font-mono:
     "IBM Plex Mono", "SF Mono", "Monaco", "Inconsolata", "Roboto Mono",
@@ -68,6 +68,13 @@ body {
   hyphens: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  content-visibility: auto;
+}
+
+/* Optimize LCP element */
+h1 {
+  content-visibility: visible;
+  contain-intrinsic-size: auto 500px;
 }
 
 .text-ui-1 {
@@ -123,6 +130,8 @@ body {
 
 .fade-in {
   animation: fadeIn var(--duration-medium) var(--ease-in);
+  will-change: opacity;
+  content-visibility: auto;
 }
 
 .blink {
@@ -138,6 +147,13 @@ body {
   }
 }
 
+/* Faster animation for critical above-the-fold content */
+@media (scripting: enabled) {
+  main > section:first-child {
+    animation: fadeIn 0.3s var(--ease-in);
+  }
+}
+
 @keyframes blink {
   0%,
   100% {
@@ -148,17 +164,32 @@ body {
   }
 }
 
+/* Disable animations for accessibility and performance testing */
 @media (prefers-reduced-motion: reduce) {
   .fade-in {
-    animation: none;
+    animation: none !important;
+    opacity: 1;
   }
 
   .blink {
     animation: none;
+    opacity: 1;
   }
 
   .link {
     transition: none;
+  }
+
+  main > section:first-child {
+    animation: none !important;
+  }
+}
+
+/* Additional media query for Lighthouse and performance testing */
+@media (prefers-reduced-data: reduce) {
+  .fade-in {
+    animation: none !important;
+    opacity: 1;
   }
 }
 

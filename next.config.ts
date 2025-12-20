@@ -1,6 +1,27 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Performance optimizations
+  compiler: {
+    // Remove console.log in production
+    removeConsole: process.env.NODE_ENV === "production",
+  },
+
+  // Optimize output for modern browsers
+  experimental: {
+    // Enable optimized CSS with inlining
+    optimizeCss: true,
+    // Optimize package imports
+    optimizePackageImports: ["react", "react-dom"],
+  },
+
+  // Enable compression
+  compress: true,
+
+  // Production source maps (disabled for smaller bundle)
+  productionBrowserSourceMaps: false,
+
+  // Rewrites for Snake 4D
   async rewrites() {
     return [
       {
@@ -10,6 +31,21 @@ const nextConfig: NextConfig = {
       {
         source: "/snake4d/:path*",
         destination: "https://snake4d.netlify.app/:path*",
+      },
+    ];
+  },
+
+  // Headers for performance
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          {
+            key: "X-DNS-Prefetch-Control",
+            value: "on",
+          },
+        ],
       },
     ];
   },
