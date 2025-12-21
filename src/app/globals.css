@@ -13,7 +13,7 @@
     "IBM Plex Mono", "SF Mono", "Monaco", "Inconsolata", "Roboto Mono",
     monospace;
 
-  --spacing-responsive: clamp(20px, 8vw, 200px);
+  --spacing-responsive: 80px;
 
   --duration-fast: 0.2s;
   --duration-medium: 0.8s;
