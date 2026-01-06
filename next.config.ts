@@ -34,8 +34,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/telemetry",
-        destination: "https://kart-telemetry.netlify.app/en/extract",
-        // go directly to extract, avoid redirect
+        destination: "https://kart-telemetry.netlify.app",
       },
       {
         source: "/telemetry/:path*",
