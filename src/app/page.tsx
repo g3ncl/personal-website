@@ -51,7 +51,7 @@ export default function Home() {
             <article>
               <h3 className="mb-1">
                 <a
-                  href="https://github.com/g3ncl/snake-4d"
+                  href="/snake4d"
                   target="_blank"
                   className="link "
                 >
@@ -60,16 +60,16 @@ export default function Home() {
               </h3>
               <p className="sub-text">
                 {"Classic Snake game expanded into four spatial dimensions. "}
-                <a href="/snake4d" target="_blank" className="link">
-                  try it
-                </a>
+                (<a href="https://github.com/g3ncl/snake-4d" target="_blank" className="link">
+                  source
+                </a>)
               </p>
             </article>
 
             <article>
               <h3 className="mb-1">
                 <a
-                  href="https://github.com/g3ncl/acc-server-web"
+                  href="https://ghcr.io/g3ncl/acc-server-web:main"
                   target="_blank"
                   className="link "
                 >
@@ -77,8 +77,28 @@ export default function Home() {
                 </a>
               </h3>
               <p className="sub-text">
-                A simple web interface for managing Assetto Corsa Competizione
-                servers, built with Next.js and TypeScript.
+                {"A simple web interface for managing Assetto Corsa Competizione servers, built with Next.js and TypeScript. "}
+                (<a href="https://github.com/g3ncl/acc-server-web" target="_blank" className="link">
+                  source
+                </a>)
+              </p>
+            </article>
+
+            <article>
+              <h3 className="mb-1">
+                <a
+                  href="/telemetry"
+                  target="_blank"
+                  className="link "
+                >
+                  Telemetry
+                </a>
+              </h3>
+              <p className="sub-text">
+                {"A web application for extracting, visualizing, and analyzing GPS telemetry data from GoPro video files and other kart telemetry formats. "}
+                (<a href="https://github.com/g3ncl/telemetry" target="_blank" className="link">
+                  source
+                </a>)
               </p>
             </article>
           </div>

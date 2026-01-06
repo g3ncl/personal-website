@@ -21,7 +21,7 @@ const nextConfig: NextConfig = {
   // Production source maps (disabled for smaller bundle)
   productionBrowserSourceMaps: false,
 
-  // Rewrites for Snake 4D
+  // Rewrites for Snake 4D and Telemetry
   async rewrites() {
     return [
       {
@@ -31,6 +31,14 @@ const nextConfig: NextConfig = {
       {
         source: "/snake4d/:path*",
         destination: "https://snake4d.netlify.app/:path*",
+      },
+      {
+        source: "/telemetry",
+        destination: "https://kart-telemetry.netlify.app/it/saved",
+      },
+      {
+        source: "/telemetry/:path*",
+        destination: "https://kart-telemetry.netlify.app/it/saved/:path*",
       },
     ];
   },
