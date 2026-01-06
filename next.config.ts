@@ -34,11 +34,11 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/telemetry",
-        destination: "https://kart-telemetry.netlify.app/it/saved",
+        destination: "https://kart-telemetry.netlify.app",
       },
       {
         source: "/telemetry/:path*",
-        destination: "https://kart-telemetry.netlify.app/it/saved/:path*",
+        destination: "https://kart-telemetry.netlify.app/:path*",
       },
     ];
   },
