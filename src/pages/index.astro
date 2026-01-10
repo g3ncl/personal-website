@@ -1,0 +1,139 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+/**
+ * Formats the current date and time in the Rome timezone.
+ */
+function getFormattedDatetime(): string {
+  const now = new Date();
+  const romeTimeZone = "Europe/Rome";
+
+  const formatter = new Intl.DateTimeFormat("en-GB", {
+    timeZone: romeTimeZone,
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  });
+
+  const parts = formatter.formatToParts(now);
+  const formattedDate = `${parts[0].value} ${parts[2].value} ${parts[4].value} at ${parts[6].value}:${parts[8].value}`;
+
+  const offsetFormatter = new Intl.DateTimeFormat("en-GB", {
+    timeZone: romeTimeZone,
+    timeZoneName: "shortOffset",
+  });
+  const offsetParts = offsetFormatter.formatToParts(now);
+  const offsetPart = offsetParts.find((part) => part.type === "timeZoneName");
+  const offset = offsetPart ? `(${offsetPart.value})` : "";
+
+  return `${formattedDate} ${offset}`;
+}
+
+const lastUpdate = getFormattedDatetime();
+---
+
+<Layout>
+  <div class="container fade-in">
+    <main class="main">
+      <section class="section">
+        <h1>Claudio Genovese<span class="blink">_</span></h1>
+
+        <div class="content">
+          <p>
+            Software engineer based in Milan, focused on clarity, reliability,
+            and craftsmanship.
+          </p>
+
+          <p>
+            Currently building at{" "}
+            <a href="https://laura.it/" target="_blank" rel="noopener noreferrer" class="link">
+              Laura
+            </a>{" "}
+            as a software engineer, where I work across the entire stack —
+            from React webapps to Java microservices. Previously spent two and
+            a half years at NTT DATA, developing my foundation in enterprise
+            software development. I believe deeply in clean code principles
+            and the discipline of continuous refactoring — understanding that
+            quality software comes from ongoing refinement. I'm also
+            passionate about open source philosophy and Linux systems.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Interests:</h2>
+        <p>
+          Apart from coding, I enjoy motorsport, simracing, cycling, 70s
+          progressive rock, and solving tricky problems of any kind.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Open Source Projects:</h2>
+
+        <div class="projects">
+          <article>
+            <h3>
+              <a href="https://snake4d.netlify.app" target="_blank" class="link">
+                Snake 4D
+              </a>
+            </h3>
+            <p class="muted">
+              Classic Snake game expanded into four spatial dimensions.
+              (<a href="https://github.com/g3ncl/snake-4d" target="_blank" class="link">source</a>)
+            </p>
+          </article>
+
+          <article>
+            <h3>
+              <a href="https://ghcr.io/g3ncl/acc-server-web:main" target="_blank" class="link">
+                ACC Server Web
+              </a>
+            </h3>
+            <p class="muted">
+              A simple web interface for managing Assetto Corsa Competizione servers, built with Next.js and TypeScript.
+              (<a href="https://github.com/g3ncl/acc-server-web" target="_blank" class="link">source</a>)
+            </p>
+          </article>
+
+          <article>
+            <h3>
+              <a href="https://kart-telemetry.netlify.app" target="_blank" class="link">
+                Telemetry
+              </a>
+            </h3>
+            <p class="muted">
+              A web application for extracting, visualizing, and analyzing GPS telemetry data from GoPro video files and other kart telemetry formats.
+              (<a href="https://github.com/g3ncl/telemetry" target="_blank" class="link">source</a>)
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <nav>
+          <div class="nav-links">
+            <a href="https://github.com/g3ncl" class="link" target="_blank" rel="noopener noreferrer">
+              GitHub
+            </a>
+            <a href="https://linkedin.com/in/claudiogenovese/" class="link" target="_blank" rel="noopener noreferrer">
+              LinkedIn
+            </a>
+            <a href="https://github.com/g3ncl/resume/releases/latest/download/resume-en.pdf" class="link" target="_blank">
+              Resume
+            </a>
+          </div>
+        </nav>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p class="no-select muted small">
+        Last update: {lastUpdate}
+      </p>
+    </footer>
+  </div>
+</Layout>

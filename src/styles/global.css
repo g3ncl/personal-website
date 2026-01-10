@@ -1,0 +1,236 @@
+/* Self-hosted fonts */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/ibm-plex-mono-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/ibm-plex-mono-500.woff2') format('woff2');
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  /* Color tokens */
+  --color-light-bg: 249 247 244;
+  --color-light-fg: 31 31 31;
+  --color-light-muted: 107 107 105;
+
+  --color-dark-bg: 31 31 31;
+  --color-dark-fg: 204 204 204;
+  --color-dark-muted: 156 156 154;
+
+  /* Semantic colors (light mode default) */
+  --background: rgb(var(--color-light-bg));
+  --foreground: rgb(var(--color-light-fg));
+  --muted: rgb(var(--color-light-muted));
+
+  /* Typography */
+  --font-mono: "IBM Plex Mono", "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", monospace;
+
+  /* Spacing */
+  --spacing-responsive: 80px;
+
+  /* Animation */
+  --duration-fast: 0.2s;
+  --duration-medium: 0.8s;
+  --duration-slow: 1s;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: rgb(var(--color-dark-bg));
+    --foreground: rgb(var(--color-dark-fg));
+    --muted: rgb(var(--color-dark-muted));
+  }
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  hyphens: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Layout */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  width: 100%;
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  padding-top: var(--spacing-responsive);
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.footer {
+  width: 100%;
+  max-width: 48rem;
+  margin: 0 auto;
+  margin-top: 4rem;
+  padding: 0 1rem;
+  padding-bottom: var(--spacing-responsive);
+}
+
+/* Typography */
+h1 {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 500;
+  margin: 0 0 1.5rem 0;
+}
+
+h2 {
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0 0 1rem 0;
+  color: var(--muted);
+}
+
+h3 {
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0 0 0.25rem 0;
+}
+
+p {
+  margin: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  line-height: 1.7;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.small {
+  font-size: 0.8rem;
+}
+
+/* Links */
+.link {
+  position: relative;
+  color: var(--foreground);
+  text-decoration: none;
+  display: inline-block;
+  background: linear-gradient(var(--muted) 0 0) 100% 100% / var(--underline-width, 100%) 1px no-repeat;
+  transition: var(--duration-fast) ease-out;
+}
+
+.link:hover,
+.link:focus {
+  --underline-width: 0%;
+  opacity: 0.7;
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--foreground);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Navigation */
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Projects */
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn var(--duration-medium) ease-in;
+}
+
+.blink {
+  animation: blink var(--duration-slow) step-start infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.01;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+  .fade-in,
+  .blink {
+    animation: none;
+  }
+
+  .link {
+    transition: none;
+  }
+}
+
+/* Print */
+@media print {
+  .blink {
+    animation: none;
+  }
+}
+
+/* Utility */
+.no-select {
+  user-select: none;
+}
