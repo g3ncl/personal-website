@@ -28,25 +28,27 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ vars.AWS_REGION }}
+          aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Deploy to S3
         run: |
-          aws s3 sync dist/ s3://${{ vars.S3_BUCKET }} \
+          aws s3 sync dist/ s3://${{ secrets.S3_BUCKET }} \
             --delete \
             --cache-control "max-age=31536000,immutable" \
             --exclude "*.html" \
             --exclude "robots.txt"
           
-          aws s3 sync dist/ s3://${{ vars.S3_BUCKET }} \
+          aws s3 sync dist/ s3://${{ secrets.S3_BUCKET }} \
             --delete \
             --cache-control "no-cache" \
             --include "*.html" \
             --include "robots.txt"
 
       - name: Invalidate CloudFront
-        if: vars.CLOUDFRONT_DISTRIBUTION_ID != ''
+        if: env.CLOUDFRONT_DISTRIBUTION_ID != ''
+        env:
+          CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
         run: |
           aws cloudfront create-invalidation \
-            --distribution-id ${{ vars.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --distribution-id $CLOUDFRONT_DISTRIBUTION_ID \
             --paths "/*"
