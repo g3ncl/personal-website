@@ -2,7 +2,7 @@ name: Deploy to S3
 
 on:
   push:
-    branches: [feature/astro]
+    branches: [main]
   workflow_dispatch:
 
 jobs:
